@@ -8,16 +8,6 @@ function Header() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <div className="Form">
-        <h1 className="App-title">Deportes de la Escuela</h1>
-        <p className="App-intro">Por favor ingrese o registrese.</p>
-        <button className="prettybtn">
-          <Link to="/login">Ingreso </Link>
-        </button>
-        <button className="prettybtn">
-          <Link to="/signup">Registro </Link>
-        </button>
-      </div>
     </Fragment>
   );
 }

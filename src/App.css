@@ -10,7 +10,7 @@
   background-color: whitesmoke;
   height: auto;
   border-bottom-style: double;
-  border-color: rgb(199, 38, 38);
+  border-color: #C72626;
   border-width: medium;
 }
 
@@ -29,10 +29,16 @@
   padding: 4rem;
 }
 
-.prettybtn {
+/*.prettybtn {
   margin: 1.8rem;
   padding: 0.8rem;
   border-radius: 1rem;
   background-color: sandybrown;
   border-style: solid;
+}*/
+
+.App-footer {
+  background-color: #990000;
+  color: #fff;
+  padding: 1.5rem;
 }
