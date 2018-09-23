@@ -1,19 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
     return (
-     <div className="Form">
-       <form>
-        <label>
-            Email:
-          <input type="email" name="email" />
-        </label>
-        <label>
-            Contraseña:
-          <input type="password" name="password" />
-        </label>
-        <button type="button">Entrar </button>
-      </form>
+     <div className="form">
+        <h2>Ingreso</h2>
+        <form className="inputs">
+          <div className="input-field">
+            <label>
+                Email
+              <input className="input-b" type="email" name="email" />
+              <p className="input-p"></p>
+            </label>
+          </div>
+          <div className="input-field">
+            <label>
+                Contraseña
+              <input className="input-b" type="password" name="password" />
+              <p className="input-p"></p>
+            </label>
+          </div>
+          <div>
+            <button className="form-btn" type="button">Ingresar </button>
+          </div>
+        </form>
+      <p>
+        No estas registrado? 
+        <span className="form-link"> 
+          <Link to="/signup">Registrate</Link>
+        </span>
+      </p>
      </div>
     );
 }

@@ -1,3 +1,4 @@
+/*------------Header-------------*/
 .App {
   text-align: center;
 }
@@ -17,49 +18,45 @@
   border-top-color: aliceblue
 }
 
-.App-title {
-  font-size: 1.5em;
-  text-align: center;
-}
-
-.App-intro {
-  font-size: large;
-  text-align: center;
-}
-
-.Form {
-  border-width: 2rem;
-  padding: 3rem;
+.Menu-bar {
   display: flex;
-  flex-direction: column;
-}
-
-.Form-2 {
-  background-color: #fff2e5;
-  padding: 2rem; 
-  display: flex;
-  flex-direction: column;
-}
-
-.App-footer {
-  background-color: #990000;
-  color: #fff;
-  padding: 1.5rem;
-}
-
-.menu-bar {
-  display: flex;
-  margin-left: 6rem;
   width: 100%;
   padding: 1rem;
   font-size: 1.2rem;
 }
 
-a {
+.Menu-bar a {
   margin-right: 2rem;
   margin-bottom: 0.5rem;
   text-decoration: blanchedalmond;
   margin-top: 0.5rem;
+}
+
+/*------------Home-------------*/
+.App-title {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1rem;
+}
+
+.App-intro {
+  font-size: large;
+  text-align: center;
+  padding: 1rem;
+}
+
+.block {
+  border-width: 2rem;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-2 {
+  background-color: #fff2e5;
+  padding: 2rem 3rem; 
+  display: flex;
+  flex-direction: column;
 }
 
 .quota-box {
@@ -67,3 +64,77 @@ a {
   margin: 1rem;
   font-size: 1.5rem;
 }
+
+.quota-box a {
+  text-decoration: blanchedalmond;
+  margin-left: 1rem;
+}
+
+/*------------Footer-------------*/
+.App-footer {
+  background-color: #990000;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+/*------------Forms-------------*/
+.form {
+  background: #fff;
+  margin: 5rem auto 5rem auto;
+  padding: 2rem;
+  box-shadow: 2px 2px 6px #888;
+  display: block;
+  box-sizing: border-box;
+  line-height: 3rem;
+  width: 50%
+}
+
+.inputs {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-field {
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.input-b {
+  margin-top: 5px;
+  padding: 12px 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #566D96;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-p {
+  margin: 0;
+  padding: 5px 0px;
+  min-height: 22px;
+  box-sizing: border-box;
+}
+
+.form-link {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-link a {
+  text-decoration: blanchedalmond;
+  margin-left: 0.5rem;
+}
+
+.form-btn {
+  padding: 16px;
+  cursor: pointer;
+  color: #fff;
+  font: 1rem "Helvetica Neue", arial, sans-serif;
+  background-color: #4C72CA;
+  justify-content: center;
+  width: 80%;
+}
+
+

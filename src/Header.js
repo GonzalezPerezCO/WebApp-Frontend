@@ -5,7 +5,7 @@ import logo from './logo-ESCUELA.svg';
 function Header() {
   return (
     <Fragment>
-      <div className="menu-bar">
+      <div className="Menu-bar">
         <Link to="/" >Inicio</Link>
         <Link to="/login" >Ingreso</Link>
         <Link to="/signup" >Registro</Link>
