@@ -29,16 +29,22 @@
   padding: 4rem;
 }
 
-/*.prettybtn {
-  margin: 1.8rem;
-  padding: 0.8rem;
-  border-radius: 1rem;
-  background-color: sandybrown;
-  border-style: solid;
-}*/
-
 .App-footer {
   background-color: #990000;
   color: #fff;
   padding: 1.5rem;
+}
+
+.menu-bar {
+  align-items: flex-end; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 6rem;
+  width: 100%;
+}
+
+.menu-bar a {
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
 }

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -24,7 +25,7 @@ function Home() {
         </p>
       </div>
       <div className="Form" >
-        <a href="http://estudiantes.is.escuelaing.edu.co/deportes/cupos_dis.php" > Ver cupos disponibles</a><br/>
+        <Link to="/quota"> Ver cupos disponibles</Link>
         <span>
           Esta es una iniciativa propia con el apoyo del Laboratorio de Sistemas y Bienestar Universitario, para la elaboración de horarios de los estudiantes al Gimnasio de la Escuela. Para saber mas visite el NOTIWEB. 
         </span>
