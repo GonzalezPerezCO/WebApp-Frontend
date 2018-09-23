@@ -2,7 +2,8 @@ import React from 'react';
 
 function LoginForm() {
     return (
-     <form>
+     <div className="Form">
+       <form>
         <label>
             Email:
           <input type="email" name="email" />
@@ -12,7 +13,8 @@ function LoginForm() {
           <input type="password" name="password" />
         </label>
         <button type="button">Entrar </button>
-     </form>
+      </form>
+     </div>
     );
 }
 

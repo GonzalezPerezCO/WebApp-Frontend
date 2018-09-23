@@ -8,7 +8,7 @@ function Home() {
         <h1 className="App-title">Horarios del Gimnasio</h1>
         <p className="App-intro">Por favor ingrese o registrese.</p>
       </div>
-      <div className="Form">
+      <div className="Form-2">
         <p>
           <b> Instrucciones:</b>
         </p>
@@ -24,8 +24,10 @@ function Home() {
           horario.
         </p>
       </div>
+      <div className="quota-box">
+          <Link to="/quota"> Ver cupos disponibles</Link>
+      </div>
       <div className="Form" >
-        <Link to="/quota"> Ver cupos disponibles</Link>
         <span>
           Esta es una iniciativa propia con el apoyo del Laboratorio de Sistemas y Bienestar Universitario, para la elaboración de horarios de los estudiantes al Gimnasio de la Escuela. Para saber mas visite el NOTIWEB. 
         </span>

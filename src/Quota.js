@@ -1,90 +1,27 @@
 import React from 'react';
+import Table from './Table';
 
-function Quota() {
-    return (
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miercoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>13</td>
-                <td>12</td>
-                <td>12</td>
-                <td>13</td>
-                <td>11</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>0</td>
-                <td>0</td>
-                <td>4</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>0</td>
-                <td>0</td>
-                <td>7</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>0</td>
-                <td>8</td>
-                <td>1</td>
-                <td>6</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>0</td>
-                <td>2</td>
-                <td>5</td>
-                <td>6</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>3</td>
-                <td>6</td>
-                <td>3</td>
-                <td>8</td>
-                <td>6</td>
-            </tr>
-        </table>
-    );
+class Quota extends React.Component {
+
+    render() {
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miercoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <Table />
+                </tbody>
+            </table>
+        );
+    }
 }
 
 export default Quota;

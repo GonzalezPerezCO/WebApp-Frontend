@@ -11,7 +11,10 @@
   height: auto;
   border-bottom-style: double;
   border-color: #C72626;
-  border-width: medium;
+  border-bottom-width: medium;
+  border-top-width: thick;
+  border-top-style: solid;
+  border-top-color: aliceblue
 }
 
 .App-title {
@@ -26,7 +29,16 @@
 
 .Form {
   border-width: 2rem;
-  padding: 4rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Form-2 {
+  background-color: #fff2e5;
+  padding: 2rem; 
+  display: flex;
+  flex-direction: column;
 }
 
 .App-footer {
@@ -36,15 +48,22 @@
 }
 
 .menu-bar {
-  align-items: flex-end; 
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin-left: 6rem;
   width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
 }
 
-.menu-bar a {
-  margin-right: 1rem;
-  margin-bottom: 0.3rem;
+a {
+  margin-right: 2rem;
+  margin-bottom: 0.5rem;
+  text-decoration: blanchedalmond;
+  margin-top: 0.5rem;
+}
+
+.quota-box {
+  padding: 2rem;
+  margin: 1rem;
+  font-size: 1.5rem;
 }
