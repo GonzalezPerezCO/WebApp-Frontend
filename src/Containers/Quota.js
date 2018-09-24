@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Data from '../Components/Data';
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 class Quota extends React.Component {
     constructor(props){
