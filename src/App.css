@@ -5,6 +5,7 @@
 
 .App-logo {
   height: auto;
+  width: 100%;
 }
 
 .App-header {
@@ -47,14 +48,14 @@
 
 .block {
   border-width: 2rem;
-  padding: 4rem 3rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
 }
 
 .block-2 {
   background-color: #fff2e5;
-  padding: 2rem 3rem; 
+  padding: 3rem 4rem; 
   display: flex;
   flex-direction: column;
 }
@@ -87,6 +88,11 @@
   box-sizing: border-box;
   line-height: 3rem;
   width: 50%
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
 }
 
 .inputs {
@@ -137,4 +143,23 @@
   width: 80%;
 }
 
+.hora {
+  margin-left: 1rem;
+  padding: 4px 8px;
+}
 
+.select-field { 
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.table-hour {
+  background: #fff;
+  margin: 5rem auto 5rem auto;
+  padding: 2rem;
+  box-shadow: 2px 2px 6px #888;
+  width: 70%;
+}

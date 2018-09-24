@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Login from './Login';
-import Signup from './Signup';
-import Quota from './Quota';
+import Login from '../Containers/Login';
+import Signup from '../Containers/Signup';
+import Quota from '../Containers/Quota';
 import Schedule from './Schedule';
 
 function Main() {

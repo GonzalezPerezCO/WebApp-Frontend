@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './logo-ESCUELA.svg';
+import logo from './../logo-ESCUELA.svg';
 
 function Header() {
   return (

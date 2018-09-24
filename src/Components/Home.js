@@ -29,7 +29,7 @@ function Home() {
       </div>
       <div className="block-2" >
         <span>
-          Esta es una iniciativa propia con el apoyo del Laboratorio de Sistemas y Bienestar Universitario, para la elaboración de horarios de los estudiantes al Gimnasio de la Escuela. Para saber mas visite el NOTIWEB. 
+          Esta es una iniciativa propia con el apoyo del Laboratorio de Sistemas y Bienestar Universitario, para la elaboración de horarios de los estudiantes al Gimnasio de la Escuela. 
         </span>
       </div>
     </Fragment>
