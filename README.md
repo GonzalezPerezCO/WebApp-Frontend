@@ -2,23 +2,23 @@ Este proyecto fue desarrollado con [Create React App](https://github.com/faceboo
 
 ## Tabla de Contenidos
 
-- [Estructura de Carpetas](#folder-structure)
-- [Scripts Disponibles](#available-scripts)
+- [Estructura de Carpetas](#estructura-de-carpetas)
+- [Scripts Disponibles](#scripts-disponibles)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
-- [Navegadores Soportados](#supported-browsers)
-- [Depurando con el Editor](#debugging-in-the-editor)
-- [Cambiando el `<title>` de la página](#changing-the-page-title)
-- [Instalando las Dependencias](#installing-a-dependency)
-- [Añadir una hoja de estilos](#adding-a-stylesheet)
-- [Despliegue](#deployment)
-  - [Servidor Estático](#static-server)
-  - [Otras Soluciones](#other-solutions)
-  - [Sirviendo Apps con Enrutamiento de lado del cliente](#serving-apps-with-client-side-routing)
-  - [Construyendo para Rutas Relativas](#building-for-relative-paths)
-- [Alternativas a Ejectar](#alternatives-to-ejecting)
+- [Navegadores Soportados](#navegadores-soportados)
+- [Depurando con el Editor](#depurando-con-el-editor)
+- [Cambiando `<title>` en la página](#cambiando-title-en-la-pagina)
+- [Instalando una Dependencia](#instalando-una-dependencia)
+- [Agregar una hoja de estilos](#agregar-una-hoja-de-estilos)
+- [Despliegue](#despliegue)
+  - [Servidor Estático](#servidor-estatico)
+  - [Otras Soluciones](#otras-soluciones)
+  - [Sirviendo Apps con Enrutamiento de lado del cliente](#sirviendo-apps-con-enrutamiento-de-lado-del-cliente)
+  - [Construyendo para Rutas Relativas](#construyendo-para-rutas-relativas)
+- [Alternativas a Ejectar](#alternativas-a-ejectar)
 
 ## Estructura de Carpetas
 
@@ -127,13 +127,13 @@ En el menu `Run` de WebStorm seleccionar `Edit Configurations...`. Despúes clic
 Corra la app usando el comnado `npm start`, luego presione `^D` en macOS o `F9` en Windows y Linux o clickee el icono verde de depurar para empezar la depuración en WebStorm.
 
 
-## Cambiando el `<title>` de la página
+## Cambiando `<title>` en la página
 
 Se puede encontrar el código HTML base en el folder `public` del proyecto generado. Se puede editar la etiqueta `<title>` para cambiar el título de “React App” a cualquier otra cosa.
 
 Note que normalmente no se editarían los archivos del folder `public` muy seguido. Por ejemplo, [añadir una hoja de estilos](#adding-a-stylesheet) es hecho sin tocar el HTML.
 
-## Instalando las Dependencias
+## Instalando una Dependencia
 
 El proyecto generado incluye React y ReactDOM como dependencias. También un conjunto de scripts usados por Create React App dependencia de desarrollo. Se pueden instalar otras dependencias (por ejemplo, React Router) con `npm`:
 
@@ -150,7 +150,7 @@ yarn add react-router
 Esto funciona para cualquier paquete, no sólo `react-router`.
 
 
-## Añadir una hoja de estilos
+## Agregar una hoja de estilos
 
 Esta configuración de proyecto usa [Webpack](https://webpack.js.org/) para manejar todos los archivos. Webpack ofrece una forma personalizada de “extender” el concepto de `import` más allá de JavaScript. Para expresar que un archivo JavaScript depende de un archivo de CSS, se necesita **importar el CSS desde el archivo JavaScript**:
 
