@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Data from '../Components/Data';
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 class Quota extends React.Component {
     constructor(props){
@@ -18,7 +18,6 @@ class Quota extends React.Component {
         axios.get(`http://localhost:8080/api`)
         .then(response => {
             const hours = response.data;
-            console.log(hours);
             this.setState({ 
                 hours,
                 loading: false 
@@ -26,7 +25,7 @@ class Quota extends React.Component {
         })
         .catch(error => {
             this.setState({
-                error: error,
+                error,
                 loading: false
              });
         });
