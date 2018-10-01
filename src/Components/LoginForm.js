@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function LoginForm() {
+function LoginForm({onSubmit, onChange, user}) {
     return (
      <div className="form">
         <h2>Ingreso</h2>
@@ -9,19 +9,19 @@ function LoginForm() {
           <div className="input-field">
             <label>
                 Email
-              <input className="input-b" type="email" name="email" />
+              <input className="input-b" type="email" name="email" value={user.email} onChange={onChange}/>
               <p className="input-p"></p>
             </label>
           </div>
           <div className="input-field">
             <label>
                 Contraseña
-              <input className="input-b" type="password" name="password" />
+              <input className="input-b" type="password" name="password" value={user.password} onChange={onChange}/>
               <p className="input-p"></p>
             </label>
           </div>
           <div>
-            <button className="form-btn" type="button">Ingresar </button>
+            <button className="form-btn" type="button" onClick={onSubmit}>Ingresar </button>
           </div>
         </form>
       <p>

@@ -29,15 +29,9 @@ class Signup extends React.Component {
   }
 
   handleSubmit = (event) => {
-    const {name, document, email, password} = this.state.user;
-    const user = {
-      name,
-      document,
-      email,
-      password
-    };
+    const newUser = this.state.user;
 
-    axios.post(`http://localhost:8080/api/estudiante`, { user })
+    axios.post(`http://localhost:8080/api/estudiante`, { newUser })
     .then(response => {
       console.log(response.data);
       swal("Listo!", "Registro realizado con éxito", "success");
@@ -46,9 +40,8 @@ class Signup extends React.Component {
       console.log(error);
       swal({
         title: "Uh oh!",
-        text: "Hubo un error con el registro: ", error,
-        icon: "error",
-        button: "Ok"
+        text: "Hubo un error con el registro: " + error.message,
+        icon: "error"
       });
       this.setState({
         error
