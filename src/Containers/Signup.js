@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { Redirect } from 'react-router-dom';
 import SignupForm from '../Components/SignupForm';
 
 class Signup extends React.Component {
@@ -35,6 +36,7 @@ class Signup extends React.Component {
     .then(response => {
       console.log(response.data);
       swal("Listo!", "Registro realizado con éxito", "success");
+	  <Redirect to="/login" />;
     })
     .catch(error => {
       console.log(error);

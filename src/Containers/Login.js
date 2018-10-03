@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { Redirect } from 'react-router-dom';
 import LoginForm from '../Components/LoginForm';
 
 class Login extends React.Component {
@@ -33,7 +34,9 @@ class Login extends React.Component {
     axios.post(`http://localhost:8080/login`, { authUser })
     .then(response => {
       console.log(response.data);
+	  localStorage.setItem(response.data.token);
       swal("Bienvenido!", "Ingreso exitoso", "success");
+	  <Redirect to="/schedule" />;
     })
     .catch(error => {
       console.log(error);

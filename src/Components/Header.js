@@ -1,15 +1,13 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import logo from './../logo-ESCUELA.svg';
+import SignedIn from '../Components/SignedIn';
+import SignedOut from '../Components/SignedOut';
 
 function Header() {
   return (
     <Fragment>
-      <div className="Menu-bar">
-        <Link to="/" >Inicio</Link>
-        <Link to="/login" >Ingreso</Link>
-        <Link to="/signup" >Registro</Link>
-      </div>
+      {/* token exits && isvalid ? <SignedIn /> : <SignedOut /> */}
+      <SignedOut />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
