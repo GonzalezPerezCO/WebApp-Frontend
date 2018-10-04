@@ -8,9 +8,9 @@ class Schedule extends React.Component {
     super(props);
 
     this.state = {
-      token: null,
+      token: '',
       info: {
-        hour: 0,
+        hour: 9,
         day: '',
       },
     };
@@ -19,23 +19,27 @@ class Schedule extends React.Component {
   handleChange = event => {
     const field = event.target.name;
     const info = this.state.info;
-    info[field] = event.target.value;
+    
 
     this.setState({
-      info,
+      info: event.target.value
     });
   };
 
   handleSubmit = () => {
-    const newDay = this.state.info;
-
-    axios
-      .post(`localhost:8080/api/horario`, { newDay })
+    //const newDay = this.state.info;
+    const url = `https://randomuser.me/api/?results=1&inc=dob&noinfo`;
+    axios.get(url )
       .then(response => {
         console.log(response.data);
+        swal("Listo!", "Agregado exitosamente", "success");
       })
       .catch(error => {
         console.log(error);
+        swal({
+          text: "Esa hora no está disponible: " + error.message,
+          icon: "error"
+        });
       });
   };
 
@@ -49,3 +53,5 @@ class Schedule extends React.Component {
     );
   }
 }
+
+export default Schedule;

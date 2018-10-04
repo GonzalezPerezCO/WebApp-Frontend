@@ -6,15 +6,17 @@ class Signout extends React.Component {
     super(props);
 
     this.state = {
-      token: null,
+      token: ''
     };
   }
 
   componentDidMount() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwt');
   }
 
   render() {
     return <Redirect to="/" />;
   }
 }
+
+export default Signout;

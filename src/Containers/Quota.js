@@ -32,7 +32,7 @@ class Quota extends React.Component {
     }
 
     renderLoading() {
-        return <div>Cargando...</div>;
+        return <div className="form">Cargando...</div>;
     }
 
     renderError() {

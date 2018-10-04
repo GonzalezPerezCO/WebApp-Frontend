@@ -10,6 +10,7 @@ class Signup extends React.Component {
 
     this.state = {
       error: null,
+      redirect: false,
       user: {
         name: '',
         document: '',
@@ -29,14 +30,16 @@ class Signup extends React.Component {
     });
   }
 
-  handleSubmit = (event) => {
-    const newUser = this.state.user;
-
-    axios.post(`http://localhost:8080/api/estudiante`, { newUser })
+  handleSubmit = () => {
+    //const newUser = this.state.user;
+    const url = `https://randomuser.me/api/?results=1&inc=name,email,login,gender&noinfo`;
+    axios.get(url)
     .then(response => {
       console.log(response.data);
       swal("Listo!", "Registro realizado con éxito", "success");
-	  <Redirect to="/login" />;
+	    this.setState({
+        redirect: true
+      })
     })
     .catch(error => {
       console.log(error);
@@ -53,10 +56,12 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <SignupForm 
+      this.state.redirect ? 
+      (<Redirect to="/login" />) : 
+      (<SignupForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
-        user={this.state.user} />
+        user={this.state.user} />)
     );
   }
 }
