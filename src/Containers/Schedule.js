@@ -8,21 +8,21 @@ class Schedule extends React.Component {
     super(props);
 
     this.state = {
-      token: '',
       info: {
         hour: 9,
-        day: '',
-      },
+        day: 'lunes',
+      }
     };
   }
 
   handleChange = event => {
     const field = event.target.name;
     const info = this.state.info;
-    
+    const data = event.target.value;
+    info[field] = data;
 
     this.setState({
-      info: event.target.value
+      info
     });
   };
 

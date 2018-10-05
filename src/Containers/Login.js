@@ -10,7 +10,6 @@ class Login extends React.Component {
 
     this.state = {
       error: null,
-      token: '',
       redirect: false,
       user: {
         email: '',

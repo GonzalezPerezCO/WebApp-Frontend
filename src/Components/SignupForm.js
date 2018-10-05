@@ -15,8 +15,8 @@ function SignupForm({onSubmit, onChange, user}) {
           </div>
           <div className="input-field">
             <label>
-                Documento identidad
-              <input className="input-b" type="text" name="document" value={user.document} onChange={onChange} />
+                Carnet
+              <input className="input-b" type="text" name="carnet" value={user.carnet} onChange={onChange} />
               <p className="input-p"></p>
             </label>
           </div>
