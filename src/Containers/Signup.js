@@ -12,7 +12,8 @@ class Signup extends React.Component {
       error: null,
       redirect: false,
       user: {
-        name: '',
+        fname: '',
+        lname: '',
         carnet: '',
         email: '',
         password: ''
@@ -31,9 +32,9 @@ class Signup extends React.Component {
   }
 
   handleSubmit = () => {
-    //const newUser = this.state.user;
-    const url = `https://randomuser.me/api/?results=1&inc=name,email,login,gender&noinfo`;
-    axios.get(url)
+    const newUser = this.state.user;
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/estudiante`;
+    axios.post(url, newUser)
     .then(response => {
       console.log(response.data);
       swal("Listo!", "Registro realizado con éxito", "success");

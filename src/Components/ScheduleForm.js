@@ -6,7 +6,7 @@ function Schedule({ onSubmit, onChange, info }) {
       <h2>Escoger horario</h2>
       <form className="inputs">
         <div className="select-field">
-          <div >
+          <div className="options">
             <label>
               Primer día
               <select className="dia" name="day" value={info.day} onChange={onChange}>
@@ -37,7 +37,7 @@ function Schedule({ onSubmit, onChange, info }) {
             </button>
         </div>
         <div className="select-field">
-          <div>
+          <div className="options">
             <label>
               Segundo día
               <select className="dia" name="day" value={info.day} onChange={onChange}>
@@ -68,7 +68,7 @@ function Schedule({ onSubmit, onChange, info }) {
           </button>
         </div>
         <div className="select-field">
-          <div>
+          <div className="options">
             <label>
               Tercer día
               <select className="dia" name="day" value={info.day} onChange={onChange}>

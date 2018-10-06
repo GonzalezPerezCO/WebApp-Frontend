@@ -8,8 +8,15 @@ function SignupForm({onSubmit, onChange, user}) {
         <form className="inputs" >
           <div className="input-field">
             <label>
-                Nombre
-              <input className="input-b" type="text" name="name" value={user.name} onChange={onChange} />
+                Nombres
+              <input className="input-b" type="text" name="fname" value={user.fname} onChange={onChange} />
+              <p className="input-p"></p>
+            </label>
+          </div>
+          <div className="input-field">
+            <label>
+                Apellidos
+              <input className="input-b" type="text" name="lname" value={user.lname} onChange={onChange} />
               <p className="input-p"></p>
             </label>
           </div>

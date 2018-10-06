@@ -7,10 +7,9 @@ function Header() {
 
     return (
       <Fragment>
-        {/* token exits && isvalid ? <SignedIn /> : <SignedOut /> */}
         { localStorage.getItem('jwt') ? <SignedIn /> : <SignedOut /> }
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo-escuela" />
         </header>
       </Fragment>
     );

@@ -8,11 +8,20 @@ class Schedule extends React.Component {
     super(props);
 
     this.state = {
+      auth: false,
       info: {
         hour: 9,
         day: 'lunes',
+        email: ''
       }
     };
+  }
+
+  validateLogin = () => {
+    /* decode jwt to get access to id & email 
+       if  localStorage has item 'jwt' then auth = true
+       this.setState({ email: jwtdecoded.email })
+    */
   }
 
   handleChange = event => {
@@ -24,12 +33,12 @@ class Schedule extends React.Component {
     this.setState({
       info
     });
-  };
+  }
 
   handleSubmit = () => {
-    //const newDay = this.state.info;
-    const url = `https://randomuser.me/api/?results=1&inc=dob&noinfo`;
-    axios.get(url )
+    const newDay = this.state.info;
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`;
+    axios.post(url, newDay)
       .then(response => {
         console.log(response.data);
         swal("Listo!", "Agregado exitosamente", "success");
@@ -41,15 +50,16 @@ class Schedule extends React.Component {
           icon: "error"
         });
       });
-  };
+  }
 
   render() {
     return (
-      <ScheduleForm
-        onSubmit={this.handleSubmit}
-        onChange={this.handleChange}
-        info={this.state.info}
-      />
+      this.state.auth ? 
+      (<Redirect to="/login" />) :
+      (<ScheduleForm 
+        onSubmit={this.handleSubmit} 
+        onChange={this.handleChange} 
+        info={this.state.info} />)
     );
   }
 }
