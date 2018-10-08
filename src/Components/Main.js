@@ -13,7 +13,7 @@ function Main() {
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
-	  <Route path="/signout" component={Signout} />
+	    <Route path="/signout" component={Signout} />
       <Route path="/quota" component={Quota} />
       <Route path="/schedule" component={Schedule} />
     </Switch>

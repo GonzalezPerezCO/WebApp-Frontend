@@ -5,7 +5,7 @@ function SignedIn() {
   return (
     <div className="Menu-bar">
       <Link to="/">Inicio</Link>
-      <Link to="/signout">Registro</Link>
+      <Link to="/signout">Salir</Link>
     </div>
   );
 }

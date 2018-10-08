@@ -15,7 +15,8 @@ class Quota extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api`)
+        const url = `http://localhost/slim-test/public/cupos`;
+        axios.get(url)
         .then(response => {
             const hours = response.data;
             this.setState({ 
@@ -32,7 +33,7 @@ class Quota extends React.Component {
     }
 
     renderLoading() {
-        return <div>Cargando...</div>;
+        return <div className="form">Cargando...</div>;
     }
 
     renderError() {

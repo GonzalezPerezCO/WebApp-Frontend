@@ -10,7 +10,7 @@ class Login extends React.Component {
 
     this.state = {
       error: null,
-      token: '',
+      redirect: false,
       user: {
         email: '',
         password: ''
@@ -28,15 +28,17 @@ class Login extends React.Component {
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = () => {
     const authUser = this.state.user;
-
-    axios.post(`http://localhost:8080/login`, { authUser })
+    const url = `http://localhost/slim-test/public/login`
+    axios.post(url, authUser)
     .then(response => {
       console.log(response.data);
-	  localStorage.setItem(response.data.token);
+	    sessionStorage.setItem('jwt', response.data.token);
       swal("Bienvenido!", "Ingreso exitoso", "success");
-	  <Redirect to="/schedule" />;
+	    this.setState({
+        redirect: true,
+      })
     })
     .catch(error => {
       console.log(error);
@@ -53,10 +55,12 @@ class Login extends React.Component {
 
   render() {
     return  (
-      <LoginForm 
+      this.state.redirect ?
+      (<Redirect to="/schedule" />) :
+      (<LoginForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
-        user={this.state.user} />
+        user={this.state.user} />)
     );
   }
 }
