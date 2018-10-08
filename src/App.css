@@ -144,13 +144,18 @@ h2 {
 }
 
 .hora {
-  margin-left: 1rem;
-  padding: 4px 8px;
+  margin-left: 0.8rem;
+  padding: 7px 8px;
 }
 
 .dia {
-  margin-left: 0.7rem;
+  margin-left: 0.8rem;
   padding: 5px;
+}
+
+.turno {
+  margin-left: 0.8rem;
+  padding: 7px 8px;
 }
 
 .select-field { 
@@ -159,6 +164,11 @@ h2 {
   border: 2px solid #ccc;
   border-radius: 5px;
   margin-top: 20px;
+}
+
+.options {
+  padding: 1rem;
+  margin: 0.8rem;
 }
 
 .options label {

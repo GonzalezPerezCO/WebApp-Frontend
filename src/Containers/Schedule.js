@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import jwt_decode from 'jwt-decode';
+import { Redirect } from 'react-router-dom';
 import ScheduleForm from '../Components/ScheduleForm';
 
 class Schedule extends React.Component {
@@ -12,16 +14,26 @@ class Schedule extends React.Component {
       info: {
         hour: 9,
         day: 'lunes',
-        email: ''
+        email: '',
+        ide: 1
       }
     };
   }
 
-  validateLogin = () => {
-    /* decode jwt to get access to id & email 
-       if  localStorage has item 'jwt' then auth = true
-       this.setState({ email: jwtdecoded.email })
-    */
+  componentDidMount() {
+   const data = sessionStorage.getItem('jwt');
+   const token = jwt_decode(data);
+   const email = token.email;
+   console.log(`email: ${email}`);
+   this.setState((state) => {
+     let stat = { 
+       auth: true, 
+       info: {
+         email: email
+        } 
+      };
+     return stat;
+   })
   }
 
   handleChange = event => {
@@ -37,7 +49,7 @@ class Schedule extends React.Component {
 
   handleSubmit = () => {
     const newDay = this.state.info;
-    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`;
+    const url = `http://localhost/slim-test/public/horario`;
     axios.post(url, newDay)
       .then(response => {
         console.log(response.data);
@@ -50,16 +62,17 @@ class Schedule extends React.Component {
           icon: "error"
         });
       });
+      console.log(newDay);
   }
 
   render() {
     return (
       this.state.auth ? 
-      (<Redirect to="/login" />) :
       (<ScheduleForm 
-        onSubmit={this.handleSubmit} 
-        onChange={this.handleChange} 
-        info={this.state.info} />)
+      onSubmit={this.handleSubmit} 
+      onChange={this.handleChange} 
+      info={this.state.info} />) :
+      (<Redirect to="/login" /> )
     );
   }
 }

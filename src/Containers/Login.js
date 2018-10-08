@@ -30,11 +30,11 @@ class Login extends React.Component {
 
   handleSubmit = () => {
     const authUser = this.state.user;
-    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`
+    const url = `http://localhost/slim-test/public/login`
     axios.post(url, authUser)
     .then(response => {
       console.log(response.data);
-	    localStorage.setItem('jwt', response.data.idToken);
+	    sessionStorage.setItem('jwt', response.data.token);
       swal("Bienvenido!", "Ingreso exitoso", "success");
 	    this.setState({
         redirect: true,

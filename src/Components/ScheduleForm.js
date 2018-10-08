@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Schedule({ onSubmit, onChange, info }) {
+function ScheduleForm({ onSubmit, onChange, info }) {
   return (
     <div className="form">
       <h2>Escoger horario</h2>
@@ -8,7 +8,15 @@ function Schedule({ onSubmit, onChange, info }) {
         <div className="select-field">
           <div className="options">
             <label>
-              Primer día
+              Turno: 
+              <select className="turno" name="ide" value={info.ide} onChange={onChange}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </label>
+            <label>
+              Dia: 
               <select className="dia" name="day" value={info.day} onChange={onChange}>
                 <option value="lunes">Lunes</option>
                 <option value="martes">Martes</option>
@@ -18,7 +26,7 @@ function Schedule({ onSubmit, onChange, info }) {
               </select>
             </label>
             <label>
-              Hora del primer día
+              Hora: 
               <select className="hora" name="hour" value={info.hour} onChange={onChange}>
                 <option value="9">9</option>
                 <option value="10">10</option>
@@ -30,68 +38,6 @@ function Schedule({ onSubmit, onChange, info }) {
                 <option value="16">16</option>
                 <option value="17">17</option>
               </select>
-            </label>
-          </div>
-          <button className="form-btn" type="button" onClick={onSubmit}>
-              Enviar
-            </button>
-        </div>
-        <div className="select-field">
-          <div className="options">
-            <label>
-              Segundo día
-              <select className="dia" name="day" value={info.day} onChange={onChange}>
-                <option value="lunes">Lunes</option>
-                <option value="martes">Martes</option>
-                <option value="miercoles">Miércoles</option>
-                <option value="jueves">Jueves</option>
-                <option value="viernes">Viernes</option>
-              </select>
-            </label>
-            <label>
-              Hora del segundo día
-              <select className="hora" name="hour" value={info.hour} onChange={onChange}>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-              </select>
-            </label>
-          </div>
-          <button className="form-btn" type="button" onClick={onSubmit}>
-              Enviar
-          </button>
-        </div>
-        <div className="select-field">
-          <div className="options">
-            <label>
-              Tercer día
-              <select className="dia" name="day" value={info.day} onChange={onChange}>
-                <option value="lunes">Lunes</option>
-                <option value="martes">Martes</option>
-                <option value="miercoles">Miércoles</option>
-                <option value="jueves">Jueves</option>
-                <option value="viernes">Viernes</option>
-              </select>
-            </label>
-            <label>
-              Hora del tercer día
-              <select className="hora" name="hour" value={info.hour} onChange={onChange}>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-              </select>          
             </label>
           </div>
           <button className="form-btn" type="button" onClick={onSubmit}>
@@ -103,4 +49,4 @@ function Schedule({ onSubmit, onChange, info }) {
   );
 }
 
-export default Schedule;
+export default ScheduleForm;
