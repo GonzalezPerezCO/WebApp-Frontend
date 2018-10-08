@@ -33,7 +33,7 @@ class Signup extends React.Component {
 
   handleSubmit = () => {
     const newUser = this.state.user;
-    const url = `http://localhost/slim-test/public/estudiante`;
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/estudiante`;
     axios.post(url, newUser)
     .then(response => {
       console.log(response.data);

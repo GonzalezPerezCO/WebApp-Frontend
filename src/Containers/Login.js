@@ -30,7 +30,7 @@ class Login extends React.Component {
 
   handleSubmit = () => {
     const authUser = this.state.user;
-    const url = `http://localhost/slim-test/public/login`
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`
     axios.post(url, authUser)
     .then(response => {
       console.log(response.data);

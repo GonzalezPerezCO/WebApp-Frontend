@@ -15,7 +15,7 @@ class Quota extends React.Component {
     }
 
     componentDidMount() {
-        const url = `http://localhost/slim-test/public/cupos`;
+        const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/cupos`;
         axios.get(url)
         .then(response => {
             const hours = response.data;

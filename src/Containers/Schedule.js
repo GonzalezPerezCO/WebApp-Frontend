@@ -24,7 +24,6 @@ class Schedule extends React.Component {
    const data = sessionStorage.getItem('jwt');
    const token = jwt_decode(data);
    const email = token.email;
-   console.log(`email: ${email}`);
    this.setState((state) => {
      let stat = { 
        auth: true, 
@@ -49,7 +48,8 @@ class Schedule extends React.Component {
 
   handleSubmit = () => {
     const newDay = this.state.info;
-    const url = `http://localhost/slim-test/public/horario`;
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`;
+    console.log(newDay);
     axios.post(url, newDay)
       .then(response => {
         console.log(response.data);
@@ -62,7 +62,6 @@ class Schedule extends React.Component {
           icon: "error"
         });
       });
-      console.log(newDay);
   }
 
   render() {

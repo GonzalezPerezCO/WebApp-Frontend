@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Horarios Gimnasio",
+  "name": "App para el registro de horarios al gimnasio",
   "icons": [
     {
       "src": "favicon.ico",
