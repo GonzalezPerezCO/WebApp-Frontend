@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import jwt_decode from 'jwt-decode';
-import { Redirect } from 'react-router-dom';
 import ScheduleForm from '../Components/ScheduleForm';
 
 class Schedule extends React.Component {
@@ -12,10 +11,10 @@ class Schedule extends React.Component {
     this.state = {
       auth: false,
       info: {
-        hour: 9,
-        day: 'lunes',
+        hora: 9,
+        dia: 'lunes',
         email: '',
-        ide: 1
+        turno: 1
       }
     };
   }
@@ -23,36 +22,27 @@ class Schedule extends React.Component {
   componentDidMount() {
    const data = sessionStorage.getItem('jwt');
    const token = jwt_decode(data);
-   const email = token.email;
-   console.log(`email: ${email}`);
+   const userEmail = token.email;
    this.setState((state) => {
-     let stat = { 
-       auth: true, 
-       info: {
-         email: email
-        } 
-      };
-     return stat;
-   })
+      state.auth = true;
+      state.info.email = userEmail;
+      return state;
+   });
   }
 
   handleChange = event => {
     const field = event.target.name;
     const info = this.state.info;
-    const data = event.target.value;
-    info[field] = data;
+    info[field] = event.target.value;
 
-    this.setState({
-      info
-    });
+    this.setState({ info });
   }
 
   handleSubmit = () => {
     const newDay = this.state.info;
-    const url = `http://localhost/slim-test/public/horario`;
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`
     axios.post(url, newDay)
       .then(response => {
-        console.log(response.data);
         swal("Listo!", "Agregado exitosamente", "success");
       })
       .catch(error => {
@@ -62,17 +52,14 @@ class Schedule extends React.Component {
           icon: "error"
         });
       });
-      console.log(newDay);
   }
 
   render() {
     return (
-      this.state.auth ? 
-      (<ScheduleForm 
-      onSubmit={this.handleSubmit} 
-      onChange={this.handleChange} 
-      info={this.state.info} />) :
-      (<Redirect to="/login" /> )
+      <ScheduleForm 
+        onSubmit={this.handleSubmit} 
+        onChange={this.handleChange} 
+        info={this.state.info} />
     );
   }
 }

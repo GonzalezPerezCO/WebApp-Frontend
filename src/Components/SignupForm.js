@@ -9,21 +9,21 @@ function SignupForm({onSubmit, onChange, user}) {
           <div className="input-field">
             <label>
                 Nombres
-              <input className="input-b" type="text" name="fname" value={user.fname} onChange={onChange} />
+              <input className="input-b" type="text" name="nombre" value={user.nombre} onChange={onChange} />
               <p className="input-p"></p>
             </label>
           </div>
           <div className="input-field">
             <label>
                 Apellidos
-              <input className="input-b" type="text" name="lname" value={user.lname} onChange={onChange} />
+              <input className="input-b" type="text" name="apellido" value={user.apellido} onChange={onChange} />
               <p className="input-p"></p>
             </label>
           </div>
           <div className="input-field">
             <label>
                 Carnet
-              <input className="input-b" type="text" name="carnet" value={user.carnet} onChange={onChange} />
+              <input className="input-b" type="text" name="codigo" value={user.codigo} onChange={onChange} />
               <p className="input-p"></p>
             </label>
           </div>

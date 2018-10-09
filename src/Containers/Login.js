@@ -23,17 +23,14 @@ class Login extends React.Component {
     const user = this.state.user;
     user[field] = event.target.value;
 
-    this.setState({
-      user
-    });
+    this.setState({ user });
   }
 
   handleSubmit = () => {
     const authUser = this.state.user;
-    const url = `http://localhost/slim-test/public/login`
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`
     axios.post(url, authUser)
     .then(response => {
-      console.log(response.data);
 	    sessionStorage.setItem('jwt', response.data.token);
       swal("Bienvenido!", "Ingreso exitoso", "success");
 	    this.setState({

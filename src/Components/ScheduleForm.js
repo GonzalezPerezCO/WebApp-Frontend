@@ -9,7 +9,7 @@ function ScheduleForm({ onSubmit, onChange, info }) {
           <div className="options">
             <label>
               Turno: 
-              <select className="turno" name="ide" value={info.ide} onChange={onChange}>
+              <select className="turno" name="turno" value={info.turno} onChange={onChange}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -17,7 +17,7 @@ function ScheduleForm({ onSubmit, onChange, info }) {
             </label>
             <label>
               Dia: 
-              <select className="dia" name="day" value={info.day} onChange={onChange}>
+              <select className="dia" name="dia" value={info.dia} onChange={onChange}>
                 <option value="lunes">Lunes</option>
                 <option value="martes">Martes</option>
                 <option value="miercoles">Miércoles</option>
@@ -27,7 +27,7 @@ function ScheduleForm({ onSubmit, onChange, info }) {
             </label>
             <label>
               Hora: 
-              <select className="hora" name="hour" value={info.hour} onChange={onChange}>
+              <select className="hora" name="hora" value={info.hora} onChange={onChange}>
                 <option value="9">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>

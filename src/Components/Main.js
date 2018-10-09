@@ -10,7 +10,7 @@ import Schedule from '../Containers/Schedule';
 function Main() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/deportes/ui" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
 	    <Route path="/signout" component={Signout} />

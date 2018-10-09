@@ -7,7 +7,7 @@ function Header() {
 
     return (
       <Fragment>
-        { localStorage.getItem('jwt') ? <SignedIn /> : <SignedOut /> }
+        { sessionStorage.getItem('jwt') ? <SignedIn /> : <SignedOut /> }
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo-escuela" />
         </header>

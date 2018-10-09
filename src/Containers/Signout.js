@@ -8,7 +8,7 @@ class Signout extends React.Component {
   }
 
   render() {
-    return <Redirect to="/" />;
+    return <Redirect to="/deportes/ui" />;
   }
 }
 
