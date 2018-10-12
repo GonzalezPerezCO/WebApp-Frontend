@@ -1,10 +1,7 @@
 /*------------Header-------------*/
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: auto;
+  display: grid;
 }
 
 .App-header {
@@ -81,13 +78,13 @@
 /*------------Forms-------------*/
 .form {
   background: #fff;
-  margin: 5rem auto 5rem auto;
+  margin: 5rem 2rem;
   padding: 2rem;
   box-shadow: 2px 2px 6px #888;
   display: block;
   box-sizing: border-box;
   line-height: 3rem;
-  width: 50%
+  display: inline-grid;
 }
 
 h2 {
@@ -178,8 +175,8 @@ h2 {
 
 .table-hour {
   background: #fff;
-  margin: 5rem auto 5rem auto;
+  margin: 5rem 2rem;
   padding: 2rem;
   box-shadow: 2px 2px 6px #888;
-  width: 70%;
+  display: inline-flex;
 }

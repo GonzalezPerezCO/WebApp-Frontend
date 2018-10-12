@@ -13,14 +13,14 @@ function Home() {
           <b> Instrucciones:</b>
         </p>
         <span>
-          Sí necesita ayuda con el sistema, puede comunicarse a los correos de los
+          Sí necesita ayuda con el sistema o se le presenta algun error, puede comunicarse a los correos de los
           desarrolladores que verá en la parte inferior.
         </span>
         <span>
-          Primero registrese en <b> Registrarse </b> con su número de reserva y complete los datos requeridos. 
+          Primero registrese en <b> Registrarse </b> con los datos requeridos. 
         </span>
           <p>El registro lo puede hacer en cualquier momento del día</p>
-        <p>Despues de crear su cuenta inicie sesión. Luego de esto puede hacer su horario.</p>
+        <p>Despues de crear su cuenta puede iniciar sesión. Luego de esto puede elegir los días en los que quiere asistir al Gimnasio.</p>
       </div>
       <div className="quota-box">
           <Link to="/quota"> Ver cupos disponibles</Link>
