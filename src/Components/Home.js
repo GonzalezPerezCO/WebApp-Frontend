@@ -17,10 +17,10 @@ function Home() {
           desarrolladores que verá en la parte inferior.
         </span>
         <span>
-          Primero registrese en <b> Registrarse </b> con los datos requeridos. 
+          Primero registrese en <b> Registro </b> con los datos requeridos. 
         </span>
           <p>El registro lo puede hacer en cualquier momento del día</p>
-        <p>Despues de crear su cuenta puede iniciar sesión. Luego de esto puede elegir los días en los que quiere asistir al Gimnasio.</p>
+        <p>Despues de crear su cuenta puede iniciar sesión en <b> Ingreso </b>. Luego de esto puede elegir los días en los que quiere asistir al Gimnasio.</p>
       </div>
       <div className="quota-box">
           <Link to="/quota"> Ver cupos disponibles</Link>

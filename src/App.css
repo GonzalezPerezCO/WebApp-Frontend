@@ -16,10 +16,10 @@
 }
 
 .Menu-bar {
-  display: flex;
+  display: block;
   width: 100%;
-  padding: 1rem;
-  font-size: 1.2rem;
+  padding: 0.6rem;
+  font-size: 1.6rem;
 }
 
 .Menu-bar a {
@@ -31,21 +31,21 @@
 
 /*------------Home-------------*/
 .App-title {
-  font-size: 2em;
+  font-size: 2.2em;
   text-align: center;
   padding: 1rem;
   font-weight: bold;
 }
 
 .App-intro {
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: center;
   padding: 1rem;
 }
 
 .block {
   border-width: 2rem;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
 }

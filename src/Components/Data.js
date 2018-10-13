@@ -3,7 +3,7 @@ import React from 'react';
 function Data({hour, index}) {
     return (
         <tr>
-            <td>{index + 9} </td>
+            <td>{index + 8} </td>
             <td>{hour.lunes} </td>
             <td>{hour.martes} </td>
             <td>{hour.miercoles} </td>
