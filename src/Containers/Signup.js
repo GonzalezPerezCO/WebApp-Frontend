@@ -29,20 +29,21 @@ class Signup extends React.Component {
     this.setState({ user });
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const newUser = this.state.user;
     const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/estudiante`;
     axios.post(url, newUser)
-    .then(response => {
-      swal("Listo!", "Registro realizado con éxito", "success");
-	    this.setState({
+    .then(() => {
+      this.setState({
         redirect: true
       })
+      setTimeout (() => swal("Listo!", "Registro realizado con éxito", "success"), 1300);
     })
     .catch(error => {
       console.log(error);
       swal({
-        title: "Uh oh!",
+        title: "Oops!",
         text: "Hubo un error con el registro: " + error.message,
         icon: "error"
       });

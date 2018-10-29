@@ -11,7 +11,7 @@ class Schedule extends React.Component {
     this.state = {
       auth: false,
       info: {
-        hora: 9,
+        hora: 8,
         dia: 'lunes',
         email: '',
         turno: 1
@@ -43,12 +43,17 @@ class Schedule extends React.Component {
     const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`
     axios.post(url, newDay)
       .then(response => {
-        swal("Listo!", "Agregado exitosamente", "success");
+        if(response.data){
+          swal(response.data, "Por favor escoje otra hora o dia", "info");
+        } else {
+          swal("Listo!", "Agregado exitosamente", "success");
+        }
       })
       .catch(error => {
         console.log(error);
         swal({
-          text: "Esa hora no está disponible: " + error.message,
+          title: "Oops!",
+          text: "Se presentó un error con los cupos: " + error.message,
           icon: "error"
         });
       });

@@ -26,22 +26,27 @@ class Login extends React.Component {
     this.setState({ user });
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const authUser = this.state.user;
     const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`
     axios.post(url, authUser)
     .then(response => {
-	    sessionStorage.setItem('jwt', response.data.token);
-      swal("Bienvenido!", "Ingreso exitoso", "success");
-	    this.setState({
-        redirect: true,
-      })
+      if(response.data.error){
+        swal("Uh oh!", response.data.message, "error")
+      } else {
+        sessionStorage.setItem('jwt', response.data.token);
+        this.setState({
+          redirect: true,
+        })
+        setTimeout (() => swal("Bienvenido!", "Ingreso exitoso", "success"), 1300);
+      }
     })
     .catch(error => {
       console.log(error);
       swal({
-        title: "Uh oh!",
-        text: "Hubo un error al ingresar: " + error.message,
+        title: "Oops!",
+        text: "Se ha presentado un error: " + error.message,
         icon: "error"
       });
       this.setState({
