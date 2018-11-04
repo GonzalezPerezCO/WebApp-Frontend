@@ -29,7 +29,7 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const authUser = this.state.user;
-    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`;
     axios.post(url, authUser)
     .then(response => {
       if(response.data.error){
@@ -39,7 +39,6 @@ class Login extends React.Component {
         this.setState({
           redirect: true,
         })
-        setTimeout (() => swal("Bienvenido!", "Ingreso exitoso", "success"), 1300);
       }
     })
     .catch(error => {

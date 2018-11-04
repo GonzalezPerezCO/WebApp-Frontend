@@ -10,11 +10,11 @@ class Schedule extends React.Component {
 
     this.state = {
       auth: false,
+      hasSchedule: false,
       info: {
         hora: 8,
         dia: 'lunes',
-        email: '',
-        turno: 1
+        email: ""
       }
     };
   }
@@ -23,6 +23,14 @@ class Schedule extends React.Component {
    const data = sessionStorage.getItem('jwt');
    const token = jwt_decode(data);
    const userEmail = token.email;
+   const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario/${userEmail}`;
+   axios.get(url)
+   .then(response => {
+     console.log(response.data);
+   })
+   .catch(error => {
+     console.log(error);
+   });
    this.setState((state) => {
       state.auth = true;
       state.info.email = userEmail;
@@ -40,9 +48,10 @@ class Schedule extends React.Component {
 
   handleSubmit = () => {
     const newDay = this.state.info;
-    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario`;
     axios.post(url, newDay)
       .then(response => {
+        console.log(response.data);
         if(response.data){
           swal(response.data, "Por favor escoje otra hora o dia", "info");
         } else {
@@ -60,11 +69,13 @@ class Schedule extends React.Component {
   }
 
   render() {
+
     return (
       <ScheduleForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
-        info={this.state.info} />
+        info={this.state.info} 
+        selected={this.state.hasSchedule ? "Ya tiene dias" : "Aún no ha seleccionado dias"}/>
     );
   }
 }

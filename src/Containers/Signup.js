@@ -38,7 +38,7 @@ class Signup extends React.Component {
       this.setState({
         redirect: true
       })
-      setTimeout (() => swal("Listo!", "Registro realizado con éxito", "success"), 1300);
+      setTimeout (() => swal("Listo!", "Registro realizado con éxito", "success"), 1100);
     })
     .catch(error => {
       console.log(error);

@@ -1,24 +1,21 @@
 import React, { Fragment } from 'react';
 
-function ScheduleForm({ onSubmit, onChange, info }) {
+function ScheduleForm({ onSubmit, onChange, info, selected }) {
   return (
     <Fragment>
       <div className="email-title">
         <h5>Bienvenido {info.email} </h5>
       </div>
+      <div>
+        <h3>Dias escogidos</h3>
+        {/*Mostrar mensaje si dias is empty else mostrar dia y hora seleccionado previamente */ }
+        {selected}
+      </div>
       <div className="form">
         <h2>Escoger horario</h2>
-        <form className="inputs">
+        <form className="inputs" onSubmit={onSubmit}>
           <div className="select-field">
             <div className="options">
-              <label>
-                Turno: 
-                <select className="turno" name="turno" value={info.turno} onChange={onChange}>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              </label>
               <label>
                 Dia: 
                 <select className="dia" name="dia" value={info.dia} onChange={onChange}>
@@ -44,14 +41,12 @@ function ScheduleForm({ onSubmit, onChange, info }) {
                 </select>
               </label>
             </div>
-            <button className="form-btn" type="button" onClick={onSubmit}>
-                Enviar
-            </button>
+            <button className="form-btn" type="submit">Enviar</button>
           </div>
         </form>
       </div>
       <div className="block-3">
-       <p>De acuerdo con el reglamento del Gimnasio, un estudiante sólo puede asistir un máximo de 3 veces por semana. <br/> Si va a asistir más de un dia al Gimnasio, elija el turno 1 junto con el dia y hora en el que quiere asistir y oprima el botón <b>Enviar.</b></p> <p>Después escoja el turno 2 con el dia y hora correspondiente y de la misma forma con el turno 3. <br/> Recuerde que sólo puede asistir una vez por dia en un espacio de una hora por dia.</p> 
+       <p>De acuerdo con el reglamento del Gimnasio, sólo puede asistir mínimo 2 veces y máximo 3 veces por semana. <br/> Puede escoger horario, eligiendo el dia y la hora en la que quiere asistir al gimnasio y luego oprimiendo el botón <b>Enviar.</b></p> <p> Recuerde que sólo puede asistir una vez por dia en un espacio de una hora por dia.</p> 
       </div>
     </Fragment>
   );
