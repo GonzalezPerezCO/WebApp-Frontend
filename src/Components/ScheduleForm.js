@@ -6,9 +6,8 @@ function ScheduleForm({ onSubmit, onChange, info, selected }) {
       <div className="email-title">
         <h5>Bienvenido {info.email} </h5>
       </div>
-      <div>
+      <div className="table-hour">
         <h3>Dias escogidos</h3>
-        {/*Mostrar mensaje si dias is empty else mostrar dia y hora seleccionado previamente */ }
         {selected}
       </div>
       <div className="form">

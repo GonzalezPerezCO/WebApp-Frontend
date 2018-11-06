@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 import Data from '../Components/Data';
 import { Table } from 'react-bootstrap';
@@ -54,25 +54,28 @@ class Quota extends React.Component {
             return this.renderError();
         }
         return (
-            <div className="table-hour">
-                <Table striped bordered condensed>
-                <thead >
-                    <tr>
-                        <th>Hora</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Miercoles</th>
-                        <th>Jueves</th>
-                        <th>Viernes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {hours.map((hour, index) => (
-                        <Data hour={hour} index={index} key={hour.id} />
-                    ))}
-                </tbody>
-            </Table>
-            </div>
+            <Fragment>
+                <div className="nota"><h5>Nota: Cada franja horaria tiene un máximo de 20 cupos</h5></div>
+                <div className="table-hour">
+                    <Table striped bordered condensed>
+                    <thead >
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miercoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {hours.map((hour, index) => (
+                            <Data hour={hour} index={index} key={hour.id} />
+                        ))}
+                    </tbody>
+                </Table>
+                </div>
+            </Fragment>
         );
     }
 

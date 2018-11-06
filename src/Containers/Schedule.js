@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import jwt_decode from 'jwt-decode';
+import { Table } from 'react-bootstrap';
 import ScheduleForm from '../Components/ScheduleForm';
 
 class Schedule extends React.Component {
@@ -11,6 +12,7 @@ class Schedule extends React.Component {
     this.state = {
       auth: false,
       hasSchedule: false,
+      days: [],
       info: {
         hora: 8,
         dia: 'lunes',
@@ -27,6 +29,11 @@ class Schedule extends React.Component {
    axios.get(url)
    .then(response => {
      console.log(response.data);
+     const days = response.data;
+      this.setState({ 
+        days,
+        hasSchedule: true
+      });
    })
    .catch(error => {
      console.log(error);
@@ -52,11 +59,11 @@ class Schedule extends React.Component {
     axios.post(url, newDay)
       .then(response => {
         console.log(response.data);
-        if(response.data){
+        /*if(response.data){
           swal(response.data, "Por favor escoje otra hora o dia", "info");
         } else {
           swal("Listo!", "Agregado exitosamente", "success");
-        }
+        }*/
       })
       .catch(error => {
         console.log(error);
@@ -68,15 +75,30 @@ class Schedule extends React.Component {
       });
   }
 
-  render() {
-
+  renderDays = () => {
+    const { days } = this.state;
+    const daysTable = <Table><thead><tr><th>Turno</th><th>Dia</th><th>Hora</th></tr></thead><tbody>{days.map((day, index) => (<tr><td>{index +1}</td><td>{day.dia}</td><td>{day.hora}</td></tr>))}</tbody></Table>
     return (
       <ScheduleForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
         info={this.state.info} 
-        selected={this.state.hasSchedule ? "Ya tiene dias" : "Aún no ha seleccionado dias"}/>
+        selected={daysTable}/>
     );
+  }
+
+  renderNormal = () => {
+    return (
+      <ScheduleForm 
+        onSubmit={this.handleSubmit} 
+        onChange={this.handleChange} 
+        info={this.state.info} 
+        selected={"Aún no ha seleccionado dias"}/>
+    );
+  }
+  
+  render() {
+    return this.state.hasSchedule ? this.renderDays() : this.renderNormal();
   }
 }
 

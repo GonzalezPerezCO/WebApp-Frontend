@@ -102,6 +102,11 @@ h2 {
   text-align: inherit;
 }
 
+.nota {
+  padding: 2rem 0.5rem 0.5rem;
+  text-align: center;
+}
+
 .inputs {
   display: block;
   width: 100%;
@@ -159,11 +164,6 @@ h2 {
   padding: 5px;
 }
 
-.turno {
-  margin-left: 0.8rem;
-  padding: 7px 8px;
-}
-
 .select-field { 
   padding: 15px 25px;
   box-sizing: border-box;
@@ -184,7 +184,7 @@ h2 {
 
 .table-hour {
   background: #fff;
-  margin: 5rem 2rem;
+  margin: 1rem 2rem 3rem;
   padding: 2rem;
   box-shadow: 2px 2px 6px #888;
   display: inline-flex;
