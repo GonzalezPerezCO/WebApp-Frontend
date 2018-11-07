@@ -6,9 +6,9 @@ function ScheduleForm({ onSubmit, onChange, info, selected }) {
       <div className="email-title">
         <h5>Bienvenido {info.email} </h5>
       </div>
-      <div className="table-hour">
-        <h3>Dias escogidos</h3>
-        {selected}
+      <div className="form">
+        <h4>Dias escogidos</h4>
+        <div className="inputs">{selected}</div>  
       </div>
       <div className="form">
         <h2>Escoger horario</h2>
@@ -18,11 +18,11 @@ function ScheduleForm({ onSubmit, onChange, info, selected }) {
               <label>
                 Dia: 
                 <select className="dia" name="dia" value={info.dia} onChange={onChange}>
-                  <option value="lunes">Lunes</option>
-                  <option value="martes">Martes</option>
-                  <option value="miercoles">Miércoles</option>
-                  <option value="jueves">Jueves</option>
-                  <option value="viernes">Viernes</option>
+                  <option value="Lunes">Lunes</option>
+                  <option value="Martes">Martes</option>
+                  <option value="Miercoles">Miércoles</option>
+                  <option value="Jueves">Jueves</option>
+                  <option value="Viernes">Viernes</option>
                 </select>
               </label>
               <label>
