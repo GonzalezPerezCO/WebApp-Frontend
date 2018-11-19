@@ -28,12 +28,12 @@ class Login extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const authUser = this.state.user;
+    const {user} = this.state;
     const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`;
-    axios.post(url, authUser)
+    axios.post(url, user)
     .then(response => {
       if(response.data.error){
-        swal("Uh oh!", response.data.message, "error")
+        swal("Uh oh!", response.data.message, "error")  
       } else {
         sessionStorage.setItem('jwt', response.data.token);
         this.setState({
@@ -42,7 +42,6 @@ class Login extends React.Component {
       }
     })
     .catch(error => {
-      console.log(error);
       swal({
         title: "Oops!",
         text: "Se ha presentado un error: " + error.message,
