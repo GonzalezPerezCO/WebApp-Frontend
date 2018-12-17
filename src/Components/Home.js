@@ -5,7 +5,7 @@ function Home() {
   return (
     <Fragment>
       <div className="block">
-        <h1 className="App-title">Horarios del Gimnasio</h1>
+        <h1 className="App-title">Alpha Sport</h1>
         <p className="App-intro">Por favor ingrese o registrese.</p>
       </div>
       <div className="block-2">

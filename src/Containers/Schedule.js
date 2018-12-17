@@ -43,21 +43,11 @@ class Schedule extends React.Component {
    .catch(error => {
      console.log(error);
    });
-   /*axios.get(`http://estudiantes.is.escuelaing.edu.co/deportes/api/public/acepta/${userEmail}`)
-   .then(response => {
-     console.log(response.data);
-   })
-   .catch(error => {
-     console.log(error);
-   });
-   check if user already accepted rules, if yes this.state.accept = true, if not render display alert 
-   */
    this.setState((state) => {
       state.auth = true;
       state.info.email = userEmail;
       return state;
    });
-   //if accept == false display alert else display schedule
     swal({
       title: "Reglamento Inscripciones Gimnasio",
       text: "1. El código de reserva es personal e intransferible. \n 2. El estudiante tendrá una semana para formalizar la inscripción al gimnasio. Pasado este tiempo se dispondrá del código de reserva. \n 3. Quien formalice su inscripción y no asista al gimnasio quedará sancionado al uso de este por un año. \n 4. Quien tenga más de tres fallas injustificadas durante el semestre no se le permitirá la inscripción en el semestre siguiente. \n 5. Fechas de asignación de códigos de reserva y horarios se publicaran en el Notiweb. \n Nota: Para iniciar actividades en el Gimnasio se requiere la evaluación física. \n \n Confirma que ha leido y entiende el reglamento",
@@ -66,7 +56,6 @@ class Schedule extends React.Component {
     .then((accepted) => {
       if(accepted){
         swal("Gracias por aceptar el reglamento ahora puede registrar horario", {icon: "success"});
-        //call api function to make sure user doesn't get alert displayed on further logins
       } else {
         swal("El reglamento no fue aceptado", "", "info");
         this.setState({
