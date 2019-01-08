@@ -73,6 +73,18 @@
   margin-left: 1rem;
 }
 
+.home-btn {
+  padding: 17px;
+  cursor: pointer;
+  color: #fff;
+  font: 1rem "Helvetica Neue", arial, sans-serif;
+  background-color: #4C72CA;
+  justify-content: center;
+  width: 30%;
+  border-radius: 15px;
+  margin: 15px;
+}
+
 /*------------Footer-------------*/
 .App-footer {
   background-color: #990000;

@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 
-function ScheduleForm({ onSubmit, onChange, info, selected }) {
+function ScheduleForm({ onSubmit, onChange, name, info, selected }) {
   return (
     <Fragment>
       <div className="email-title">
-        <h5>Bienvenido {info.email} </h5>
+        <h5>Bienvenido {name} </h5>
+        <h6> {info.email} </h6>
       </div>
       <div className="form">
         <h4>Dias escogidos</h4>

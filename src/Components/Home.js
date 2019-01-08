@@ -1,26 +1,29 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-function Home() {
+function Home({ error, loginButton }) {
   return (
     <Fragment>
       <div className="block">
+        {error}
         <h1 className="App-title">Alpha Sport</h1>
-        <p className="App-intro">Por favor ingrese o registrese.</p>
+        <span>
+          <button className="home-btn" onClick={loginButton}>Ingresar</button>
+        </span>
       </div>
       <div className="block-2">
         <p>
           <b> Instrucciones:</b>
         </p>
         <span>
-          Sí necesita ayuda con el sistema o se le presenta algun error, puede comunicarse a los correos de los
-          desarrolladores que verá en la parte inferior.
+          Puede ingresar al sistema usando su usuario y contraseña asignada del correo institucional.
         </span>
-        <span>
-          Primero registrese en <b> Registro </b> con los datos requeridos. 
-        </span>
-          <p>El registro lo puede hacer en cualquier momento del día</p>
-        <p>Despues de crear su cuenta puede iniciar sesión en <b> Ingreso </b>. Luego de esto puede elegir los días en los que quiere asistir al Gimnasio.</p>
+            <p>   </p>
+            <p>El registro puede ser realizado en cualquier momento del día</p>
+          <span>
+            <p>Al ingresar correctamente va a poder ver el reglamento del Gimnasio. 
+            Una vez lo haya aceptado, podrá registrar los días en los que quiere asistir al Gimnasio.</p>
+          </span>
       </div>
       <div className="quota-box">
           <Link to="/quota"> Ver cupos disponibles</Link>
