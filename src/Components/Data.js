@@ -4,11 +4,11 @@ function Data({hour, index}) {
     return (
         <tr>
             <td>{index + 8 + ":00"} </td>
-            <td>{hour.Lunes} </td>
-            <td>{hour.Martes} </td>
-            <td>{hour.Miercoles} </td>
-            <td>{hour.Jueves} </td>
-            <td>{hour.Viernes} </td>
+            <td>{hour.LUNES} </td>
+            <td>{hour.MARTES} </td>
+            <td>{hour.MIERCOLES} </td>
+            <td>{hour.JUEVES} </td>
+            <td>{hour.VIERNES} </td>
       </tr>
     );
 }

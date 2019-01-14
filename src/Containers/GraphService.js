@@ -12,6 +12,9 @@ function getAuthenticatedClient(accessToken) {
  export async function getUserDetails(accessToken) {
     const client = getAuthenticatedClient(accessToken);
   
-    const user = await client.api('/me').get();
+    const user = await client.api('/me')
+    .get((err, res) => {
+        console.log(err);
+    });
     return user;
   }

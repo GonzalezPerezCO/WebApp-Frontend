@@ -1,22 +1,21 @@
 import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-import config from '../Components/Config';
+import jwt_decode from 'jwt-decode';
 import { Table } from 'react-bootstrap';
 import Days from '../Components/Days';
 import { Redirect } from 'react-router-dom';
 import ScheduleForm from '../Components/ScheduleForm';
-import { getUserDetails } from './GraphService';
 
 class Schedule extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      auth: false,
       hasSchedule: false,
       redirect: false,
       days: [],
-      usrName: '',
       info: {
         hora: 8,
         dia: 'lunes',
@@ -25,15 +24,10 @@ class Schedule extends React.Component {
     };
   }
 
-  async componentDidMount() {
-   try{
-
-     const accsTkn = await window.msal.acquireTokenSilent(config.scopes);
-     const usr = await getUserDetails(accsTkn);
-     console.log(usr);
-
-     const userName = sessionStorage.getItem('name');
-     const userEmail = sessionStorage.getItem('email');
+  componentDidMount() {
+     const data = sessionStorage.getItem('jwt');
+     const token = jwt_decode(data);
+     const userEmail = token.email;
      const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/horario/${userEmail}`;
      axios.get(url)
        .then(response => {
@@ -49,14 +43,11 @@ class Schedule extends React.Component {
          console.log(error);
        });
      this.setState((state) => {
-       state.usrName = userName;
+       state.auth = true;
        state.info.email = userEmail;
        return state;
      });
-  }
-  catch(err){
-    console.error(err);
-  }
+
     swal({
       title: "Reglamento Inscripciones Gimnasio",
       text: "1. El código de reserva es personal e intransferible. \n 2. El estudiante tendrá una semana para formalizar la inscripción al gimnasio. Pasado este tiempo se dispondrá del código de reserva. \n 3. Quien formalice su inscripción y no asista al gimnasio quedará sancionado al uso de este por un año. \n 4. Quien tenga más de tres fallas injustificadas durante el semestre no se le permitirá la inscripción en el semestre siguiente. \n 5. Fechas de asignación de códigos de reserva y horarios se publicaran en el Notiweb. \n Nota: Para iniciar actividades en el Gimnasio se requiere la evaluación física. \n \n Confirma que ha leido y entiende el reglamento",
@@ -112,7 +103,6 @@ class Schedule extends React.Component {
       <ScheduleForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
-        name={this.state.usrName}
         info={this.state.info} 
         selected={daysTable}/>
     );
@@ -123,7 +113,6 @@ class Schedule extends React.Component {
       <ScheduleForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
-        name={this.state.usrName}
         info={this.state.info} 
         selected={"Aún no ha seleccionado dias"}/>
     );

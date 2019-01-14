@@ -3,13 +3,8 @@ import { Redirect } from 'react-router-dom';
 
 class Signout extends React.Component {
 
-  async componentDidMount() {
-    try {
-      await window.msal.logout();
-    }
-    catch(err) {
-      console.error('ERROR: ' + err);
-    }
+  componentDidMount() {
+    sessionStorage.removeItem('jwt');
   }
 
   render() {

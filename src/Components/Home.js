@@ -7,22 +7,21 @@ function Home({ error, loginButton }) {
       <div className="block">
         {error}
         <h1 className="App-title">Alpha Sport</h1>
-        <span>
-          <button className="home-btn" onClick={loginButton}>Ingresar</button>
-        </span>
+        <p className="App-intro">Por favor ingrese o registrese.</p>
       </div>
       <div className="block-2">
         <p>
           <b> Instrucciones:</b>
         </p>
         <span>
-          Puede ingresar al sistema usando su usuario y contraseña asignada del correo institucional.
+          Primero registrese en <b> Registro </b> con los datos requeridos. 
         </span>
             <p>   </p>
             <p>El registro puede ser realizado en cualquier momento del día</p>
           <span>
-            <p>Al ingresar correctamente va a poder ver el reglamento del Gimnasio. 
-            Una vez lo haya aceptado, podrá registrar los días en los que quiere asistir al Gimnasio.</p>
+            <p>Luego inicie sesión en <b> Ingreso </b> con los datos que registró</p>
+            <p>Al ingresar correctamente va a poder ver el reglamento del Gimnasio.</p> 
+            <p>Una vez lo haya aceptado, podrá registrar los días en los que quiere asistir al Gimnasio.</p>
           </span>
       </div>
       <div className="quota-box">

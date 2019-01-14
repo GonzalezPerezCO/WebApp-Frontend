@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 
-function ScheduleForm({ onSubmit, onChange, name, info, selected }) {
+function ScheduleForm({ onSubmit, onChange, info, selected }) {
   return (
     <Fragment>
       <div className="email-title">
-        <h5>Bienvenido {name} </h5>
-        <h6> {info.email} </h6>
+        <h5>Bienvenido</h5>
+        <h6> {info.email.toLowerCase()} </h6>
       </div>
       <div className="form">
         <h4>Dias escogidos</h4>
@@ -19,11 +19,11 @@ function ScheduleForm({ onSubmit, onChange, name, info, selected }) {
               <label>
                 Dia: 
                 <select className="dia" name="dia" value={info.dia} onChange={onChange}>
-                  <option value="Lunes">Lunes</option>
-                  <option value="Martes">Martes</option>
-                  <option value="Miercoles">Miércoles</option>
-                  <option value="Jueves">Jueves</option>
-                  <option value="Viernes">Viernes</option>
+                  <option value="LUNES">Lunes</option>
+                  <option value="MARTES">Martes</option>
+                  <option value="MIERCOLES">Miércoles</option>
+                  <option value="JUEVES">Jueves</option>
+                  <option value="VIERNES">Viernes</option>
                 </select>
               </label>
               <label>
