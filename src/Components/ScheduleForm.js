@@ -1,51 +1,54 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-function ScheduleForm({ onSubmit, onChange, info }) {
+function ScheduleForm({ onSubmit, onChange, info, selected }) {
   return (
-    <div className="form">
-      <h2>Escoger horario</h2>
-      <form className="inputs">
-        <div className="select-field">
-          <div className="options">
-            <label>
-              Turno: 
-              <select className="turno" name="turno" value={info.turno} onChange={onChange}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </label>
-            <label>
-              Dia: 
-              <select className="dia" name="dia" value={info.dia} onChange={onChange}>
-                <option value="lunes">Lunes</option>
-                <option value="martes">Martes</option>
-                <option value="miercoles">Miércoles</option>
-                <option value="jueves">Jueves</option>
-                <option value="viernes">Viernes</option>
-              </select>
-            </label>
-            <label>
-              Hora: 
-              <select className="hora" name="hora" value={info.hora} onChange={onChange}>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-              </select>
-            </label>
+    <Fragment>
+      <div className="email-title">
+        <h4>Bienvenido</h4>
+        <h5> {info.email.toLowerCase()} </h5>
+      </div>
+      <div className="form">
+        <h4>Dias escogidos</h4>
+        <div className="inputs">{selected}</div>  
+      </div>
+      <div className="form">
+        <h2>Escoger horario</h2>
+        <form className="inputs" onSubmit={onSubmit}>
+          <div className="select-field">
+            <div className="options">
+              <label>
+                Dia: 
+                <select className="dia" name="dia" value={info.dia} onChange={onChange}>
+                  <option value="LUNES">Lunes</option>
+                  <option value="MARTES">Martes</option>
+                  <option value="MIERCOLES">Miércoles</option>
+                  <option value="JUEVES">Jueves</option>
+                  <option value="VIERNES">Viernes</option>
+                </select>
+              </label>
+              <label>
+                Hora: 
+                <select className="hora" name="hora" value={info.hora} onChange={onChange}>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                </select>
+              </label>
+            </div>
+            <button className="form-btn" type="submit">Enviar</button>
           </div>
-          <button className="form-btn" type="button" onClick={onSubmit}>
-              Enviar
-          </button>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+      <div className="block-3">
+       <p>De acuerdo con el reglamento del Gimnasio, sólo puede asistir mínimo 2 veces y máximo 3 veces por semana. <br/> Puede escoger horario, eligiendo el dia y la hora en la que quiere asistir al gimnasio y luego oprimiendo el botón <b>Enviar.</b></p> <p> Recuerde que sólo puede asistir una vez por dia en un espacio de una hora por dia.</p> 
+      </div>
+    </Fragment>
   );
 }
 

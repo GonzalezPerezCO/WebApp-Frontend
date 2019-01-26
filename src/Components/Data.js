@@ -3,12 +3,12 @@ import React from 'react';
 function Data({hour, index}) {
     return (
         <tr>
-            <td>{index + 1} </td>
-            <td>{hour.lunes} </td>
-            <td>{hour.martes} </td>
-            <td>{hour.miercoles} </td>
-            <td>{hour.jueves} </td>
-            <td>{hour.viernes} </td>
+            <td>{index + 8 + ":00"} </td>
+            <td>{hour.LUNES} </td>
+            <td>{hour.MARTES} </td>
+            <td>{hour.MIERCOLES} </td>
+            <td>{hour.JUEVES} </td>
+            <td>{hour.VIERNES} </td>
       </tr>
     );
 }

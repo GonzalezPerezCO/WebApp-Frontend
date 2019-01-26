@@ -1,10 +1,7 @@
 /*------------Header-------------*/
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: auto;
+  display: grid;
 }
 
 .App-header {
@@ -19,10 +16,10 @@
 }
 
 .Menu-bar {
-  display: flex;
+  display: block;
   width: 100%;
-  padding: 1rem;
-  font-size: 1.2rem;
+  padding: 0.6rem;
+  font-size: 1.6rem;
 }
 
 .Menu-bar a {
@@ -34,30 +31,35 @@
 
 /*------------Home-------------*/
 .App-title {
-  font-size: 2em;
+  font-size: 2.2em;
   text-align: center;
   padding: 1rem;
   font-weight: bold;
 }
 
 .App-intro {
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: center;
   padding: 1rem;
 }
 
 .block {
   border-width: 2rem;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
 }
 
 .block-2 {
   background-color: #fff2e5;
-  padding: 3rem 4rem; 
+  padding: 2rem 4rem; 
   display: flex;
   flex-direction: column;
+}
+
+.block-3 {
+  background-color: #fff2e5;
+  padding: 1.5rem; 
 }
 
 .quota-box {
@@ -71,6 +73,18 @@
   margin-left: 1rem;
 }
 
+.home-btn {
+  padding: 17px;
+  cursor: pointer;
+  color: #fff;
+  font: 1rem "Helvetica Neue", arial, sans-serif;
+  background-color: #4C72CA;
+  justify-content: center;
+  width: 30%;
+  border-radius: 15px;
+  margin: 15px;
+}
+
 /*------------Footer-------------*/
 .App-footer {
   background-color: #990000;
@@ -81,18 +95,28 @@
 /*------------Forms-------------*/
 .form {
   background: #fff;
-  margin: 5rem auto 5rem auto;
+  margin: 2rem 4rem;
   padding: 2rem;
   box-shadow: 2px 2px 6px #888;
   display: block;
   box-sizing: border-box;
   line-height: 3rem;
-  width: 50%
+  display: inline-grid;
 }
 
 h2 {
   padding: 0;
   margin: 0;
+}
+
+.email-title {
+  padding: 2rem;
+  text-align: inherit;
+}
+
+.nota {
+  padding: 2rem 0.5rem 0.5rem;
+  text-align: center;
 }
 
 .inputs {
@@ -107,7 +131,6 @@ h2 {
 }
 
 .input-b {
-  margin-top: 5px;
   padding: 12px 10px;
   border-width: 2px;
   border-style: solid;
@@ -140,7 +163,7 @@ h2 {
   font: 1rem "Helvetica Neue", arial, sans-serif;
   background-color: #4C72CA;
   justify-content: center;
-  width: 80%;
+  width: 50%;
 }
 
 .hora {
@@ -151,11 +174,6 @@ h2 {
 .dia {
   margin-left: 0.8rem;
   padding: 5px;
-}
-
-.turno {
-  margin-left: 0.8rem;
-  padding: 7px 8px;
 }
 
 .select-field { 
@@ -178,8 +196,8 @@ h2 {
 
 .table-hour {
   background: #fff;
-  margin: 5rem auto 5rem auto;
+  margin: 1rem 2rem 3rem;
   padding: 2rem;
   box-shadow: 2px 2px 6px #888;
-  width: 70%;
+  display: inline-flex;
 }

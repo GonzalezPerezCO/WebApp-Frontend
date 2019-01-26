@@ -5,8 +5,7 @@ function SignedOut() {
   return (
     <div className="Menu-bar">
       <Link to="/deportes/ui">Inicio</Link>
-      <Link to="/deportes/ui">Ingreso</Link>
-      <Link to="/deportes/ui">Registro</Link>
+      <Link to="/login">Ingreso</Link>
     </div>
   );
 }

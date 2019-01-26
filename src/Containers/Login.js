@@ -7,10 +7,11 @@ import LoginForm from '../Components/LoginForm';
 class Login extends React.Component {
   constructor(props){
     super(props);
-
+    
     this.state = {
       error: null,
       redirect: false,
+      registered: false,
       user: {
         email: '',
         password: ''
@@ -26,22 +27,36 @@ class Login extends React.Component {
     this.setState({ user });
   }
 
-  handleSubmit = () => {
-    const authUser = this.state.user;
-    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`
-    axios.post(url, authUser)
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const {user} = this.state;
+    const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/login`;
+    axios.post(url, user)
     .then(response => {
-	    sessionStorage.setItem('jwt', response.data.token);
-      swal("Bienvenido!", "Ingreso exitoso", "success");
-	    this.setState({
-        redirect: true,
-      })
+      if(response.data.error){
+        swal("Uh oh!", response.data.message, "error")  
+      } else {
+        sessionStorage.setItem('jwt', response.data.token);
+        axios.get(`http://estudiantes.is.escuelaing.edu.co/deportes/api/public/registro/${user.email}`)
+        .then(res => {
+          if(res.data.registro === 1){
+            sessionStorage.setItem('state', res.data.registro);
+            this.setState({
+               registered: true
+            })
+          }
+        }).catch(err => {
+          console.error(err.message);
+        })
+        this.setState({
+          redirect: true,
+        })
+      }
     })
     .catch(error => {
-      console.log(error);
       swal({
-        title: "Uh oh!",
-        text: "Hubo un error al ingresar: " + error.message,
+        title: "Oops!",
+        text: "Se ha presentado un error: " + error.message,
         icon: "error"
       });
       this.setState({
@@ -53,7 +68,7 @@ class Login extends React.Component {
   render() {
     return  (
       this.state.redirect ?
-      (<Redirect to="/schedule" />) :
+      (this.state.registered ? <Redirect to="/schedule" /> : <Redirect to="/signup" />) :
       (<LoginForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 

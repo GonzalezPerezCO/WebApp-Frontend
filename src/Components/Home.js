@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-function Home() {
+function Home({ error }) {
   return (
     <Fragment>
       <div className="block">
-        <h1 className="App-title">Horarios del Gimnasio</h1>
+        {error}
+        <h1 className="App-title">Alpha Sport</h1>
         <p className="App-intro">Por favor ingrese o registrese.</p>
       </div>
       <div className="block-2">
@@ -13,21 +14,21 @@ function Home() {
           <b> Instrucciones:</b>
         </p>
         <span>
-          Sí necesita ayuda con el sistema, puede comunicarse a los correos de los
-          desarrolladores que verá en la parte inferior.
+          Puede iniciar sesión en <b> Ingreso </b> con su correo institucional. 
         </span>
-        <span>
-          Primero registrese en <b> Registrarse </b> con su número de reserva y complete los datos requeridos. 
-        </span>
-          <p>El registro lo puede hacer en cualquier momento del día</p>
-        <p>Despues de crear su cuenta inicie sesión. Luego de esto puede hacer su horario.</p>
+            <p>   </p>
+            <p>Luego complete el registro con los datos requeridos</p>
+          <span>
+            <p>Al ingresar correctamente va a poder ver el reglamento del Gimnasio.</p> 
+            <p>Una vez lo haya aceptado, podrá registrar los días en los que quiere asistir al Gimnasio.</p>
+          </span>
       </div>
       <div className="quota-box">
           <Link to="/quota"> Ver cupos disponibles</Link>
       </div>
       <div className="block-2" >
         <span>
-          Esta es una iniciativa propia con el apoyo del Laboratorio de Sistemas y Bienestar Universitario. <br/> Creada para facilitar la elaboración de horarios de los estudiantes al Gimnasio de la Escuela. 
+         <p> Esta es una iniciativa propia con el apoyo del Laboratorio de Sistemas y Bienestar Universitario. </p> Creada para facilitar la elaboración de horarios de los estudiantes al Gimnasio de la Escuela. 
         </span>
       </div>
     </Fragment>

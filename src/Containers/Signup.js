@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import jwt_decode from 'jwt-decode';
 import { Redirect } from 'react-router-dom';
 import SignupForm from '../Components/SignupForm';
 
@@ -15,10 +16,22 @@ class Signup extends React.Component {
         nombre: '',
         apellido: '',
         codigo: '',
-        email: '',
-        password: ''
+        reserva: '',
+        documento: '',
+        carrera: '',
+        semestre: '',
+        email: ''
       }
     };
+  }
+
+  componentDidMount() {
+    const data = sessionStorage.getItem('jwt');
+    const token = jwt_decode(data);
+    this.setState(state => {
+       state.user.email = token.email
+       return state;
+    })
   }
 
   handleChange = (event) => {
@@ -29,23 +42,23 @@ class Signup extends React.Component {
     this.setState({ user });
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const newUser = this.state.user;
     const url = `http://estudiantes.is.escuelaing.edu.co/deportes/api/public/estudiante`;
     axios.post(url, newUser)
-    .then(response => {
-      swal("Listo!", "Registro realizado con éxito", "success");
-	    this.setState({
-        redirect: true
+      .then(() => {
+        this.setState({
+          redirect: true
+        })
       })
-    })
-    .catch(error => {
-      console.log(error);
-      swal({
-        title: "Uh oh!",
-        text: "Hubo un error con el registro: " + error.message,
-        icon: "error"
-      });
+      .catch(error => {
+        console.log(error);
+        swal({
+          title: "Oops!",
+          text: "Hubo un error con el registro: " + error.message,
+          icon: "error"
+        });
       this.setState({
         error
       })
@@ -55,7 +68,7 @@ class Signup extends React.Component {
   render() {
     return (
       this.state.redirect ? 
-      (<Redirect to="/login" />) : 
+      (<Redirect to="/schedule" />) : 
       (<SignupForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 

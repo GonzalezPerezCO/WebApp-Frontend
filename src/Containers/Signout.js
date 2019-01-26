@@ -5,6 +5,7 @@ class Signout extends React.Component {
 
   componentDidMount() {
     sessionStorage.removeItem('jwt');
+    sessionStorage.removeItem('state');
   }
 
   render() {
