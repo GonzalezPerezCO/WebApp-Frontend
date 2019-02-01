@@ -4,6 +4,7 @@ function SignupForm({onSubmit, onChange, user}) {
     return (
       <div className="form">
         <h3>Termina el registro</h3>
+        <h4>{user.email}</h4>
         <form className="inputs" onSubmit={onSubmit}>
           <div className="input-field">
             <label>

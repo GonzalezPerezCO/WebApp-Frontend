@@ -5,7 +5,7 @@ function ScheduleForm({ onSubmit, onChange, info, selected }) {
     <Fragment>
       <div className="email-title">
         <h4>Bienvenido</h4>
-        <h5> {info.email.toLowerCase()} </h5>
+        <h6> {info.email.toLowerCase()} </h6>
       </div>
       <div className="form">
         <h4>Dias escogidos</h4>

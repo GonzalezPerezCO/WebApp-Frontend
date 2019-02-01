@@ -27,7 +27,7 @@ class Schedule extends React.Component {
 
   componentDidMount() {
      const data = sessionStorage.getItem('jwt');
-     const regs = sessionStorage.getItem('state');
+     const regs = this.props.location.state.reg;
      if (regs !== null){
         this.setState({
              registered: true
@@ -47,7 +47,7 @@ class Schedule extends React.Component {
          }
        })
        .catch(error => {
-         console.log(error);
+         console.log(error.message);
        });
      this.setState(state => {
        state.auth = true;
@@ -67,7 +67,6 @@ class Schedule extends React.Component {
             { icon: "success" });
           axios.post(`http://estudiantes.is.escuelaing.edu.co/deportes/api/public/registro`,
             { estado: '1', email: this.state.info.email })
-
         } else {
           swal("El reglamento no fue aceptado", "", "info");
           this.setState({

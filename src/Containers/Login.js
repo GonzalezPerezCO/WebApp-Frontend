@@ -37,19 +37,8 @@ class Login extends React.Component {
         swal("Uh oh!", response.data.message, "error")  
       } else {
         sessionStorage.setItem('jwt', response.data.token);
-        axios.get(`http://estudiantes.is.escuelaing.edu.co/deportes/api/public/registro/${user.email}`)
-        .then(res => {
-          if(res.data.registro === 1){
-            sessionStorage.setItem('state', res.data.registro);
-            this.setState({
-               registered: true
-            })
-          }
-        }).catch(err => {
-          console.error(err.message);
-        })
         this.setState({
-          redirect: true,
+          redirect: true
         })
       }
     })
@@ -68,7 +57,8 @@ class Login extends React.Component {
   render() {
     return  (
       this.state.redirect ?
-      (this.state.registered ? <Redirect to="/schedule" /> : <Redirect to="/signup" />) :
+      (<Redirect to={{pathname: "/spinner", 
+        state: {reg: this.state.registered, email: this.state.user.email} }} />) :
       (<LoginForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 

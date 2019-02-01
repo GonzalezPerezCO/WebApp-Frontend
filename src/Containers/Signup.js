@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-import jwt_decode from 'jwt-decode';
 import { Redirect } from 'react-router-dom';
 import SignupForm from '../Components/SignupForm';
 
@@ -26,10 +25,9 @@ class Signup extends React.Component {
   }
 
   componentDidMount() {
-    const data = sessionStorage.getItem('jwt');
-    const token = jwt_decode(data);
+    const userEmail = this.props.location.state.email;
     this.setState(state => {
-       state.user.email = token.email
+       state.user.email = userEmail;
        return state;
     })
   }
@@ -53,7 +51,6 @@ class Signup extends React.Component {
         })
       })
       .catch(error => {
-        console.log(error);
         swal({
           title: "Oops!",
           text: "Hubo un error con el registro: " + error.message,
@@ -68,7 +65,7 @@ class Signup extends React.Component {
   render() {
     return (
       this.state.redirect ? 
-      (<Redirect to="/schedule" />) : 
+      (<Redirect to={{pathname: "/schedule", state: {reg: false} }} />) : 
       (<SignupForm 
         onSubmit={this.handleSubmit} 
         onChange={this.handleChange} 
