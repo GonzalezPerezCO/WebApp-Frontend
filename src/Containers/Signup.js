@@ -15,6 +15,10 @@ class Signup extends React.Component {
         nombre: '',
         apellido: '',
         codigo: '',
+        reserva: '',
+        documento: '',
+        carrera: '',
+        semestre: '',
         email: '',
         password: ''
       }
@@ -41,7 +45,6 @@ class Signup extends React.Component {
       setTimeout (() => swal("Listo!", "Registro realizado con éxito", "success"), 1100);
     })
     .catch(error => {
-      console.log(error);
       swal({
         title: "Oops!",
         text: "Hubo un error con el registro: " + error.message,
